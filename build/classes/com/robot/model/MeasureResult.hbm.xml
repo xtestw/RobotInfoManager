@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-3-22 14:17:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.robot.model.MeasureResult" table="MEASURERESULT">
+        <id name="mrId" type="int">
+            <column name="MRID" />
+            <generator class="assigned" />
+        </id>
+        <property name="stationNameString" type="java.lang.String">
+            <column name="STATIONNAMESTRING" />
+        </property>
+        <property name="pGName" type="java.lang.String" access="field">
+            <column name="PGNAME" />
+        </property>
+        <property name="pointName" type="java.lang.String">
+            <column name="POINTNAME" />
+        </property>
+        <property name="nop" type="float">
+            <column name="NOP" />
+        </property>
+        <property name="hz" type="float">
+            <column name="HZ" />
+        </property>
+        <property name="v" type="float">
+            <column name="V" />
+        </property>
+        <property name="dist" type="float">
+            <column name="DIST" />
+        </property>
+        <property name="faceMode" type="java.lang.String">
+            <column name="FACEMODE" />
+        </property>
+        <property name="mesureTime" type="java.util.Date">
+            <column name="MESURETIME" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-3-22 14:17:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.robot.model.StationInfo" table="STATIONINFO">
+        <id name="humidity" type="float">
+            <column name="HUMIDITY" />
+            <generator class="assigned" />
+        </id>
+        <property name="stationName" type="java.lang.String">
+            <column name="STATIONNAME" />
+        </property>
+        <property name="standardPtName" type="java.lang.String">
+            <column name="STANDARDPTNAME" />
+        </property>
+        <property name="orientPtName" type="java.lang.String">
+            <column name="ORIENTPTNAME" />
+        </property>
+        <property name="instHeight" type="float">
+            <column name="INSTHEIGHT" />
+        </property>
+        <property name="tagtHeight" type="float">
+            <column name="TAGTHEIGHT" />
+        </property>
+        <property name="temp" type="float">
+            <column name="TEMP" />
+        </property>
+        <property name="pressure" type="float">
+            <column name="PRESSURE" />
+        </property>
+        <property name="seril" type="java.lang.String">
+            <column name="SERIL" />
+        </property>
+        <property name="morphReport" type="java.lang.String">
+            <column name="MORPHREPORT" />
+        </property>
+        <property name="createDate" type="java.util.Date">
+            <column name="CREATEDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

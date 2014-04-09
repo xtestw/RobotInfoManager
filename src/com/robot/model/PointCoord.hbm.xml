@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-3-22 14:17:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.robot.model.PointCoord" table="POINTCOORD">
+        <id name="pcid" type="int">
+            <column name="PCID" />
+            <generator class="assigned" />
+        </id>
+        <property name="pointName" type="java.lang.String">
+            <column name="POINTNAME" />
+        </property>
+        <property name="PGName" type="java.lang.String">
+            <column name="PGNAME" />
+        </property>
+        <property name="nop" type="int">
+            <column name="NOP" />
+        </property>
+        <property name="twoc" type="float">
+            <column name="TWOC" />
+        </property>
+        <property name="ieovc" type="float">
+            <column name="IEOVC" />
+        </property>
+        <property name="X" type="float">
+            <column name="X" />
+        </property>
+        <property name="Y" type="float">
+            <column name="Y" />
+        </property>
+        <property name="Z" type="float">
+            <column name="Z" />
+        </property>
+        <property name="theXDiff" type="float">
+            <column name="THEXDIFF" />
+        </property>
+        <property name="theYDiff" type="float">
+            <column name="THEYDIFF" />
+        </property>
+        <property name="theZDiff" type="float">
+            <column name="THEZDIFF" />
+        </property>
+        <property name="totalXdiff" type="float">
+            <column name="TOTALXDIFF" />
+        </property>
+        <property name="totalYDiff" type="float">
+            <column name="TOTALYDIFF" />
+        </property>
+        <property name="totalZDiff" type="float">
+            <column name="TOTALZDIFF" />
+        </property>
+        <property name="measureTime" type="java.util.Date">
+            <column name="MEASURETIME" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<constant name="struts.action.extension" value="action,do"/>
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<constant name="struts.multipart.maxSize" value="10240000"></constant>
+	<constant name="struts.custom.i18n.resources" value="Message"></constant>
+	<!-- 表示Action由Spring来进行创建，可以直接使用Spring依赖注入来注入 -->
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+	<!-- <constant name="struts.ui.theme" value="simple"></constant> -->
+<!--      <package name="ajaxDefault" extends="json-default">
+    	<action name="*_*" class="{1}Action" method="{2}">
+        	<result name="ajaxsuccess" type="json"></result>
+   		 </action>
+	</package> -->
+	  <package name="default" namespace="/" extends="struts-default,json-default">
+      	<global-results>
+    		<result name="error">/WEB-INF/jsp/inc/error.jsp</result>
+    		<result name="exception">/WEB-INF/jsp/inc/exception.jsp</result>
+    		<result name="login">/login.jsp</result>
+    	</global-results>
+     	<global-exception-mappings>
+    		<exception-mapping result="exception" exception="com.robot.exception.DocumentException"></exception-mapping>
+    	</global-exception-mappings>	
+    	<action name="login_*" class="loginAction" method="{1}">
+    	    <result name="success">/WEB-INF/jsp/index.jsp</result>
+    		<result type="redirect" name="redirect">${url}</result>
+    	</action>
+        <action name="*_*" class="{1}Action" method="{2}">
+    		<result>/WEB-INF/jsp/{1}/{2}.jsp</result>
+    		<result name="input">/WEB-INF/jsp/{1}/{2}Input.jsp</result>
+    		<result type="redirect" name="redirect">${url}</result>
+    		<result name="ajaxsuccess" type="json">
+    		</result>
+    	</action>
+    </package>
+ 
+</struts>
