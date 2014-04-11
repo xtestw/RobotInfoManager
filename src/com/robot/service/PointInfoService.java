@@ -3,6 +3,7 @@ package com.robot.service;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.robot.dao.PointInfoDao;
@@ -10,6 +11,7 @@ import com.robot.model.PointInfo;
 import com.robot.service.inte.IPointInfoService;
 
 @Service("pointInfoService")
+@Scope("prototype")
 public class PointInfoService implements IPointInfoService {
 
 	private PointInfoDao pointInfoDao;
@@ -48,8 +50,7 @@ public class PointInfoService implements IPointInfoService {
 	}
 	@Override
 	public void setFactory(String name) {
-		pointInfoDao.setSuperSessionFactory(name);
-		
+		pointInfoDao.setSuperSessionFactory(name);		
 	}
 
 

@@ -2,12 +2,14 @@ package com.robot.service;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.robot.dao.PointCoordDao;
 import com.robot.model.PointCoord;
 import com.robot.service.inte.IPointCoordService;
 @Service("pointCoordService")
+@Scope("prototype")
 public class PointCoordService implements IPointCoordService {
 	
 	private PointCoordDao pointCoordDao;

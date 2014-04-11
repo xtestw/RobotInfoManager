@@ -45,15 +45,17 @@ public class UserAction extends ActionSupport implements ModelDriven<UserInfo>{
 		return userInfo;
 	}
 	
-	public String goupdate(){
-		ActionUtil.setUrl("/WEB-INF/jsp/user/update.jsp");
-		return "redirect";
+	public String info(){
+
+		return SUCCESS;
 	}
 	
 	public String update()
 	{
 		userInfoService.update(userInfo);
-		return SUCCESS;
+		ActionContext.getContext().getSession().put("loginUser", userInfo);
+		ActionUtil.setUrl("user_info.action");
+		return "redirect";
 	}
 	
 }

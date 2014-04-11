@@ -61,6 +61,12 @@ public class ProjectService implements IProjectService {
 		return projectDao.list("from Project");
 	}
 
+	@Override
+	public Project load(String name) {
+		return (Project)projectDao.queryByHql("select p from Project p where p.projectName=?",name);
+	
+	}
+
 	
 
 }

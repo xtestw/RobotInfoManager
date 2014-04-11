@@ -2,6 +2,7 @@ package com.robot.service;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.robot.dao.SectionInfoDao;
@@ -10,6 +11,7 @@ import com.robot.service.inte.ISectionInfoService;
 
 
 @Service("sectionInfoService")
+@Scope("prototype")
 public class SectionInfoService implements ISectionInfoService {
 
 	private SectionInfoDao sectionInfoDao;

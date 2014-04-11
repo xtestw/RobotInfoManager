@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.json.annotations.JSON;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -106,5 +107,13 @@ public class ProjectAction extends ActionSupport implements ModelDriven<Project>
 		projectService.update(project);
 		ActionUtil.setUrl("/WEB-INF/jsp/project/list.jsp");
 		return "redirect";   
+	}
+	
+	public String select()
+	{
+		project=projectService.load(project.getProjectName());
+		ServletActionContext.getContext().getSession().put("curProject", project);
+		ActionUtil.setUrl("project_list.action");
+		return "redirect";
 	}
 }

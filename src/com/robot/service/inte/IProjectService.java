@@ -2,7 +2,6 @@ package com.robot.service.inte;
 
 import java.util.List;
 
-import org.ietf.jgss.Oid;
 
 import com.robot.model.Pager;
 import com.robot.model.Project;
@@ -17,4 +16,5 @@ public interface IProjectService {
 	public Pager<Project> findProject();
 	public void update(Project project);
 	public List<Project> list();
+	public Project load(String name);
 }

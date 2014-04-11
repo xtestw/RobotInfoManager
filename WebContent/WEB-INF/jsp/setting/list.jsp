@@ -26,7 +26,7 @@
  <div class="content" style="min-height: 1000px">
 		<div class="container-fluid">
 		<div class="row-fluid">
-		<h2>选择项目</h2>
+		<h2>设置</h2>
 			<div>
 				<ul class="breadcrumb">
 					<li>
@@ -48,23 +48,18 @@
 		<table class="table table-striped table-bordered table-hover datatable">
 		<thead>
 			<tr>
-				 <th>项目名称</th>
-				 <th>项目描述</th>
-				 <th>操作</th>
+				 <th>ID</th>
+				 <th>Setting</th>
+				 <th>Value</th>
 			</tr>
 		</thead>
 		<tbody>   
-		<c:forEach var="item" items="${projects}" >
+		<c:forEach var="item" items="${settings}" >
 		<tr>
-			<td class="center">${item.projectName }</td>
-			<td class="center">${item.projectNote }</td>
+			<td class="center">${item.id }</td>
+			<td class="center">${item.setting }</td>
 			<td class="center">
-			<c:if test="${(!empty sessionScope.curProject) && item.projectName==sessionScope.curProject.projectName}" >
-				<a href="#">已选择 </a>
-			</c:if>
-			<c:if test="${empty sessionScope.curProject || item.projectName!=sessionScope.curProject.projectName}" >
-				<a href="project_select.action?projectName=${item.projectName }">选择 </a>
-			</c:if>
+			${item.value }
 			</td>
 		</tr>
 		</c:forEach>

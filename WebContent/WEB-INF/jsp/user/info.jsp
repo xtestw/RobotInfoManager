@@ -26,50 +26,41 @@
  <div class="content" style="min-height: 1000px">
 		<div class="container-fluid">
 		<div class="row-fluid">
-		<h2>选择项目</h2>
+		<h2>个人账号设置</h2>
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						基本功能：
+						首页：
 					</li>
 					<li>
-						分页 <span class="divider">/</span>
+						账号 <span class="divider">/</span>
 					</li>
 					<li>
-						排序 <span class="divider">/</span>
+						设置 <span class="divider">/</span>
 					</li>
-					<li>
-						过滤
-					</li>
+				
 				</ul>
 			</div>
 			</div>
 			<div class="row-fluid">
-		<table class="table table-striped table-bordered table-hover datatable">
-		<thead>
-			<tr>
-				 <th>项目名称</th>
-				 <th>项目描述</th>
-				 <th>操作</th>
-			</tr>
-		</thead>
-		<tbody>   
-		<c:forEach var="item" items="${projects}" >
-		<tr>
-			<td class="center">${item.projectName }</td>
-			<td class="center">${item.projectNote }</td>
-			<td class="center">
-			<c:if test="${(!empty sessionScope.curProject) && item.projectName==sessionScope.curProject.projectName}" >
-				<a href="#">已选择 </a>
-			</c:if>
-			<c:if test="${empty sessionScope.curProject || item.projectName!=sessionScope.curProject.projectName}" >
-				<a href="project_select.action?projectName=${item.projectName }">选择 </a>
-			</c:if>
-			</td>
-		</tr>
-		</c:forEach>
-		</tbody>
-		</table>
+		    <div class="dialog">
+      		<div class="">
+            <div class="block-body">
+                <form action="login_login.action" id="login_form" method="post">
+                    <label>用户名</label>
+                    <input type="text" class="span12" name="username" id="username" disabled="disabled" value="${sessionScope.loginUser.userName}">
+                    <label>原密码</label>
+                    <input type="password" class="span12" name="password" id="password">
+                    <label>新密码</label>
+                    <input type="password" class="span12" name="password" id="password">
+                    <label>确认新密 码</label>
+                    <input type="password" class="span12" name="password" id="password">
+ 					<a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="login()">修改</a>
+                    <div class="clearfix"></div>
+                </form>
+            </div>
+        </div>
+    </div>
 	
         </div>
   <%@include file="../inc/footer.jsp"%>   

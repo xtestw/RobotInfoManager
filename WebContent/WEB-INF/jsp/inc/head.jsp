@@ -11,10 +11,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<link href="/robot/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/lib/bootstrap/css/bootstrap.css">
-    
+    <script type="text/javascript" src="<%=request.getContextPath()%>/js/func.js"></script>
     <link rel="stylesheet" type="text/css" href="<%=request.getContextPath()%>/stylesheets/theme.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/lib/font-awesome/css/font-awesome.css">
-	 <script src="<%=request.getContextPath()%>/lib/jquery-1.7.2.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/lib/font-awesome/css/font-awesome.css"><%-- 
+	 <script src="<%=request.getContextPath()%>/lib/jquery-1.7.2.min.js" type="text/javascript"></script> --%>
       <script src="<%=request.getContextPath()%>/js/jquery1.9.1.js" type="text/javascript"></script>
   <style type="text/css">
         #line-chart {
@@ -33,6 +33,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             font-weight: bold;
         }
     </style>
+    <script type="text/javascript">
+
+    function go(url)
+    {
+        var strSession="${sessionScope.curProject}".toString();
+    	if (strSession=="")   
+    	{
+    		alert("请先选择项目！");
+    		 window.location.href="project_list.action";
+    	}else
+    	{
+    		window.location.href=url;
+    	}
+    	
+    }</script>
    <link rel="shortcut icon" href="../assets/ico/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">

@@ -2,6 +2,7 @@ package com.robot.service;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.robot.dao.StationInfoDao;
@@ -11,6 +12,7 @@ import com.robot.model.StationInfo;
 import com.robot.service.inte.IStationInfoService;
 
 @Service("stationInfoService")
+@Scope("prototype")
 public class StationInfoService implements IStationInfoService {
 
 	private StationInfoDao stationInfoDao;
@@ -43,7 +45,7 @@ public class StationInfoService implements IStationInfoService {
 	@Override
 	public Pager<StationInfo> find(Project project) {
 		return null;
-	//	return stationInfoDao.find("from StationInfo stationinfo where stationinfo.p_id=?", project.getId());
+		//return stationInfoDao.find("from StationInfo stationinfo where stationinfo.p_id=?", project.getId());
 	}
 
 	@Override

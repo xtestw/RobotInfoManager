@@ -4,6 +4,10 @@
 
     
    <div class="sidebar-nav">
+   <p class="block-heading">当前项目:
+   <c:if test="${empty sessionScope.curProject}">未选择</c:if>
+   <c:if  test="${!empty sessionScope.curProject}">${sessionScope.curProject.projectName }</c:if>
+   </p>
    <a href="#home-menu" class="nav-header" data-toggle="collapse"><i class="icon-home"></i>首页</a>
           <ul id="home-menu"  class="nav nav-list collapse in">
             <li><a href="index.html" >首页</a></li>
@@ -27,7 +31,7 @@
 
         <a href="#set-menu" class="nav-header" data-toggle="collapse"><i class="icon-cog"></i>设置</a>
         <ul id="set-menu" class="nav nav-list collapse">
-            <li ><a href="Connection.html">通信设置</a></li>
+            <li ><a href="javascript:void(0)" onclick="go('setting_list.action?projectname=${sessionScope.curProject.projectName}')">通信设置</a></li>
            
             <li ><a href="EDM.html">EDM设置</a></li>
         </ul>

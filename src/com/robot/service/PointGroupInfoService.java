@@ -2,6 +2,7 @@ package com.robot.service;
 
 import javax.annotation.Resource;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.robot.dao.PointGroupInfoDao;
@@ -10,6 +11,7 @@ import com.robot.service.inte.IPointGroupInfoService;
 
 
 @Service("pointGroupInfoService")
+@Scope("prototype")
 public class PointGroupInfoService implements IPointGroupInfoService {
 
 	private PointGroupInfoDao pointGroupInfoDao;

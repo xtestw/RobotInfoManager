@@ -1,26 +1,30 @@
 package com.robot.action;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
-
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import com.robot.model.Project;
 import com.robot.model.Setting;
-import com.robot.service.SettingService;
+import com.robot.service.inte.ISettingService;
 
 @Controller("settingAction")
 @Scope("prototype")
 public class SettingAction extends ActionSupport implements ModelDriven<Setting> {
-	private SettingService settingService;
+	private ISettingService settingService;
+	private String projectname;
 	private Setting setting;
-	public SettingService getSettingService() {
+	private List<Setting> settings;
+	
+	
+	public ISettingService getSettingService() {
 		return settingService;
 	}
 	@Resource
-	public void setSettingService(SettingService settingService) {
+	public void setSettingService(ISettingService settingService) {
 		this.settingService = settingService;
 	}
 	public Setting getSetting() {
@@ -30,6 +34,19 @@ public class SettingAction extends ActionSupport implements ModelDriven<Setting>
 		this.setting = setting;
 	}
 	
+	
+	public List<Setting> getSettings() {
+		return settings;
+	}
+	public void setSettings(List<Setting> settings) {
+		this.settings = settings;
+	}
+	public String getProjectname() {
+		return projectname;
+	}
+	public void setProjectname(String projectname) {
+		this.projectname = projectname;
+	}
 	@Override
 	public Setting getModel() {
 		// TODO Auto-generated method stub
@@ -42,5 +59,10 @@ public class SettingAction extends ActionSupport implements ModelDriven<Setting>
 		settingService.update(setting);
 		return SUCCESS;		
 	}
-	
+	public String list()
+	{
+		settingService.setDB(projectname);
+		settings=settingService.list();
+		return SUCCESS;
+	}
 }

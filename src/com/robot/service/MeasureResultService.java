@@ -3,6 +3,7 @@ package com.robot.service;
 import javax.annotation.Resource;
 
 import org.omg.CORBA.PUBLIC_MEMBER;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.robot.dao.MeasureResultDao;
@@ -10,6 +11,7 @@ import com.robot.model.MeasureResult;
 import com.robot.service.inte.IMeasureResultService;
 
 @Service("mesureResultService")
+@Scope("prototype")
 public class MeasureResultService implements IMeasureResultService {
 
 	private MeasureResultDao measureResultDao;
