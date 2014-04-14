@@ -15,6 +15,32 @@
 			} 
 		});
 } );</script>
+<script type="text/javascript">
+	function user_update()
+	{
+		
+		if ($("#username").val()!=="" && $("#prepassword").val()!="" && $("#curpassword").val()!="" && $("#recurpassword").val()!="" )
+		{	if ( $("#password").val()==$("#password").val( ))
+			$.ajax({
+				url:'project_update.action',
+				type:'post',
+				data:({projectName:"fdfda",projectNote:"Aa"}),
+				success:function(results)
+				{
+					results=results["projectNote"];
+					$("#content").html(results);
+				/* 	for (var p in results)
+						$("#content").innerHTML+=p+":"+results[p]+"<br/>"; */
+				}
+				});
+		/* 		$("#user_form").submit(); */
+			else
+				alert("两次输入新密码不一致");}
+		else{
+				alert("密码不能为空");
+			}
+	}
+</script>
 <link href="/robot/css/bootstrap-responsiv.css" rel="stylesheet" type="text/css"/>
 <link href="/robot/css/dataTables.bootstra.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -46,16 +72,16 @@
 		    <div class="dialog">
       		<div class="">
             <div class="block-body">
-                <form action="login_login.action" id="login_form" method="post">
+                <form action="user_update.action" id="user_form" method="post">
                     <label>用户名</label>
                     <input type="text" class="span12" name="username" id="username" disabled="disabled" value="${sessionScope.loginUser.userName}">
                     <label>原密码</label>
-                    <input type="password" class="span12" name="password" id="password">
+                    <input type="password" class="span12" name="prepassword" id="prepassword">
                     <label>新密码</label>
-                    <input type="password" class="span12" name="password" id="password">
+                    <input type="password" class="span12" name="curpassword" id="curpassword">
                     <label>确认新密 码</label>
-                    <input type="password" class="span12" name="password" id="password">
- 					<a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="login()">修改</a>
+                    <input type="password" class="span12" name="recurpassword" id="recurpassword">
+ 					<a href="javascript:void(0)" class="btn btn-primary pull-right" onclick="user_update()">修改</a>
                     <div class="clearfix"></div>
                 </form>
             </div>

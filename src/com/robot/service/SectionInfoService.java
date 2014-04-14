@@ -1,5 +1,7 @@
 package com.robot.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
@@ -51,6 +53,11 @@ public class SectionInfoService implements ISectionInfoService {
 	@Override
 	public void setFactory(String name) {
 		sectionInfoDao.setSuperSessionFactory(name);
+	}
+	@Override
+	public List<SectionInfo> list() {
+		// TODO Auto-generated method stub
+		return sectionInfoDao.list("from SectionInfo");
 	}
 
 

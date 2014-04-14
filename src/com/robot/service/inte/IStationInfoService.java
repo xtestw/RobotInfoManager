@@ -1,5 +1,7 @@
 package com.robot.service.inte;
 
+import java.util.List;
+
 import com.robot.model.Pager;
 import com.robot.model.Project;
 import com.robot.model.StationInfo;
@@ -18,4 +20,6 @@ public interface IStationInfoService {
 	public void update(StationInfo stationInfo);
 	
 	public void setFactory(String name);
+	
+	public List<StationInfo> list();
 }

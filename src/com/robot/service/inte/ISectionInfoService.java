@@ -1,5 +1,7 @@
 package com.robot.service.inte;
 
+import java.util.List;
+
 import com.robot.model.SectionInfo;
 
 
@@ -14,5 +16,6 @@ public interface ISectionInfoService {
 	public void update(SectionInfo sectionInfo);
 	
 	public void setFactory(String name);
+	public List<SectionInfo> list();
 	
 }

@@ -1,5 +1,7 @@
 package com.robot.service.inte;
 
+import java.util.List;
+
 import com.robot.model.PointInfo;
 
 
@@ -16,4 +18,6 @@ public interface IPointInfoService {
 	public PointInfo load(int id);
 	
 	public void setFactory(String name);
+
+	public List<PointInfo> list();
 }

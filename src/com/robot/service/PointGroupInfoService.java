@@ -1,5 +1,7 @@
 package com.robot.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
@@ -51,6 +53,11 @@ public class PointGroupInfoService implements IPointGroupInfoService {
 	@Override
 	public void setFactory(String name) {
 		pointGroupInfoDao.setSuperSessionFactory(name);
+	}
+	@Override
+	public List<PointGroupInfo> list() {
+		// TODO Auto-generated method stub
+		return pointGroupInfoDao.list("from PointGroupInfo");
 	}
 
 

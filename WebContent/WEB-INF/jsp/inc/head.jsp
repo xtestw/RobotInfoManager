@@ -16,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="stylesheet" href="<%=request.getContextPath()%>/lib/font-awesome/css/font-awesome.css"><%-- 
 	 <script src="<%=request.getContextPath()%>/lib/jquery-1.7.2.min.js" type="text/javascript"></script> --%>
       <script src="<%=request.getContextPath()%>/js/jquery1.9.1.js" type="text/javascript"></script>
-  <style type="text/css">
+    <style type="text/css">
         #line-chart {
             height:300px;
             width:800px;
