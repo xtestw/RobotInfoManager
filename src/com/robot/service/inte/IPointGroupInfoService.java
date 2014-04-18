@@ -3,6 +3,8 @@ package com.robot.service.inte;
 import java.util.List;
 
 import com.robot.model.PointGroupInfo;
+import com.robot.model.PointInfo;
+import com.robot.model.PointName;
 
 
 public interface IPointGroupInfoService {
@@ -19,4 +21,8 @@ public interface IPointGroupInfoService {
 	public void setFactory(String name);
 
 	public List<PointGroupInfo> list();
+	
+	public List<PointInfo> list(String name);
+
+	public List<PointName> listAllPoint(String pgName);
 }

@@ -31,9 +31,9 @@
         <a href="#set-menu" class="nav-header accordion-toggle" data-toggle="collapse" data-parent="#accordion1"><i class="icon-cog"></i>分析系统</a>
      
         <ul id="set-menu" class="nav nav-list collapse">
-            <li ><a href="#">点位缩略图</a></li>
+            <li ><a href="javascript:void(0)" onclick="go('pointThumbnail_draw.action?projectname=${sessionScope.curProject.projectName}')">点位缩略图</a></li>
            
-            <li ><a href="EDM.html">XYZ方向位移图</a></li>
+            <li ><a href="javascript:void(0)" onclick="go('xyzMove_show.action?projectname=${sessionScope.curProject.projectName}')">XYZ方向位移图</a></li>
         </ul>
         </div>
   <div class="accordion-group" style="padding: 0px;margin:0px;">

@@ -59,7 +59,11 @@ public class PointInfoService implements IPointInfoService {
 		// TODO Auto-generated method stub
 		return pointInfoDao.list("from PointInfo");
 	}
-
+	@Override
+	public List<PointInfo> listnonull() {
+		// TODO Auto-generated method stub
+		return pointInfoDao.list("from PointInfo p where p.x is not null and p.y is not null");
+	}
 
 
 }

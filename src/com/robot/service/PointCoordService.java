@@ -1,5 +1,7 @@
 package com.robot.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.context.annotation.Scope;
@@ -7,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import com.robot.dao.PointCoordDao;
 import com.robot.model.PointCoord;
+import com.robot.model.PointName;
 import com.robot.service.inte.IPointCoordService;
 @Service("pointCoordService")
 @Scope("prototype")
@@ -53,5 +56,13 @@ public class PointCoordService implements IPointCoordService {
 		pointCoordDao.setSuperSessionFactory(name);
 		
 	}
+	@Override
+	public List<PointCoord> list(String pointName,String PGName) {
+		// TODO Auto-generated method stub
+		return pointCoordDao.list("from PointCoord p where p.totalXdiff is not null"
+				+ "and p.totalYDiff is not null and p.totalZDiff is not null and p.pointName = "+pointName+
+				"p.PGName="+PGName);
+	}
+
 
 }

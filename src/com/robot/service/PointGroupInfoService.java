@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 
 import com.robot.dao.PointGroupInfoDao;
 import com.robot.model.PointGroupInfo;
+import com.robot.model.PointInfo;
+import com.robot.model.PointName;
 import com.robot.service.inte.IPointGroupInfoService;
 
 
@@ -58,6 +60,19 @@ public class PointGroupInfoService implements IPointGroupInfoService {
 	public List<PointGroupInfo> list() {
 		// TODO Auto-generated method stub
 		return pointGroupInfoDao.list("from PointGroupInfo");
+	}
+	@Override
+	public List<PointInfo> list(String name) {
+		// TODO Auto-generated method stub
+		List<PointInfo> points=null;
+		return points;
+	}
+	@Override
+	public List<PointName> listAllPoint(String pgName) {
+		// TODO Auto-generated method stub
+		PointGroupInfo p=(PointGroupInfo)pointGroupInfoDao.queryByHql("From PointGroup p where p.PGName="+pgName);
+		// TODO  
+		return null;
 	}
 
 

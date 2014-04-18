@@ -20,4 +20,7 @@ public interface IPointInfoService {
 	public void setFactory(String name);
 
 	public List<PointInfo> list();
+	
+	public List<PointInfo> listnonull();
+	
 }
