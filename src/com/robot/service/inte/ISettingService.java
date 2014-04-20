@@ -4,6 +4,7 @@ package com.robot.service.inte;
 import java.util.List;
 
 import com.robot.model.Setting;
+import com.robot.model.WarningSetting;
 
 
 
@@ -16,4 +17,5 @@ public interface ISettingService {
 	public void setFactory(String name);
 	public List<Setting> list();
 	public void setDB(String name);
+	public WarningSetting getValues();
 }

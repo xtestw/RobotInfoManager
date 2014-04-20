@@ -40,8 +40,13 @@
         <a href="#premeasure-menu" class="nav-header collapsed accordion-toggle" data-toggle="collapse" data-parent="#accordion1"><i class="icon-pencil"></i>预警系统 </a>
  
         <ul id="premeasure-menu" class="nav nav-list collapse">
-            <li ><a href="PointEditor.html">点编辑</a></li>
-            <li ><a href="PointGroupEditor.html">点组编辑</a></li>
+            <li ><a href="PointEditor.html">预/报警值阅览</a></li>
+            <li ><a href="PointGroupEditor.html">三维位移略图</a></li>
+            <li ><a href="PointGroupEditor.html">水平收敛预警</a></li>
+            <li ><a href="PointGroupEditor.html">拱顶沉降预警</a></li>
+            <li ><a href="PointGroupEditor.html">倾斜度预警</a></li>
+            <li ><a href="PointGroupEditor.html">沉降预警</a></li>
+            <li ><a href="PointGroupEditor.html">预警信息查询</a></li>
         </ul>
          </div>
           <div class="accordion-group" style="padding: 0px;margin:0px;">

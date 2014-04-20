@@ -2,6 +2,7 @@ package com.robot.service;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import com.robot.dao.SettingDao;
 import com.robot.model.Setting;
+import com.robot.model.WarningSetting;
 import com.robot.service.inte.ISettingService;
 @Service("settingService")
 @Scope("prototype")
@@ -63,6 +65,21 @@ public class SettingService implements ISettingService {
 	public void setDB(String name) {
 		
 		settingDao.setSuperSessionFactory(name);
+	}
+	@Override
+	public WarningSetting getValues() {
+	    WarningSetting ret=new WarningSetting();
+		ret.setCZGD((String)settingDao.queryByHql("from Setting s where s.value='CZGD'"));
+		ret.setQJGD((String)settingDao.queryByHql("from Setting s where s.value='QJGD'"));
+		ret.setSL((String)settingDao.queryByHql("from Setting s where s.value='SL'"));
+		ret.setCZGDV((String)settingDao.queryByHql("from Setting s where s.value='CZGDV'"));
+		ret.setQJGDV((String)settingDao.queryByHql("from Setting s where s.value='QJGDV'"));
+		ret.setSLV((String)settingDao.queryByHql("from Setting s where s.value='SLV'"));
+		ret.setQX((String)settingDao.queryByHql("from Setting s where s.value='QX'"));
+		ret.setQXV((String)settingDao.queryByHql("from Setting s where s.value='QXV'"));
+		ret.setCJ((String)settingDao.queryByHql("from Setting s where s.value='CJ'"));
+		ret.setCJV((String)settingDao.queryByHql("from Setting s where s.value='CJV'"));
+		return ret;
 	}
 
 
