@@ -55,5 +55,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
   
 	<script src="js/jquery.dataTables.js" type="text/javascript"></script>
-  	<script src="js/dataTables.bootstrap.js" type="text/javascript"></script>
-    
+  	 <script src="js/TableTools.js"type="text/javascript"></script>
+    <script src="js/ZeroClipboard.js"type="text/javascript"></script>
+    <link href="/robot/css/TableTools.css" rel="stylesheet" type="text/css"/>
+   <script src="js/dataTables.bootstrap.js" type="text/javascript"></script>
+   

@@ -7,12 +7,16 @@
 <head>
  
         <%@include file="../inc/head.jsp"%>
-          <script type="text/javascript">
+                  <script type="text/javascript">
           $(document).ready(function() {                    
-				$('.datatable').dataTable( {        				
+				$('.datatable').dataTable( { 				
 				"oLanguage": {
-				"sUrl": "/robot/lib/zh_CN.json"
-			} 
+				"sUrl": "/robot/lib/zh_CN.json" 
+				},
+				"sDom": 'T<"clear">lfrtip',
+	        	"oTableTools": {
+	           	 "sSwfPath": "/robot/media/copy_csv_xls_pdf.swf"
+	        	} 
 		});
 } );</script>
 <link href="/robot/css/bootstrap-responsiv.css" rel="stylesheet" type="text/css"/>
@@ -26,21 +30,16 @@
  <div class="content" style="min-height: 1000px">
 		<div class="container-fluid">
 		<div class="row-fluid">
-		<h2>设置</h2>
+		<h2>站点信息</h2>
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						基本功能：
+						信息查询：
 					</li>
 					<li>
-						分页 <span class="divider">/</span>
+						站点信息 <span class="divider">/</span>
 					</li>
-					<li>
-						排序 <span class="divider">/</span>
-					</li>
-					<li>
-						过滤
-					</li>
+					
 				</ul>
 			</div>
 			</div>
@@ -48,17 +47,17 @@
 		<table class="table table-striped table-bordered table-hover datatable">
 		<thead>
 			<tr>
-				 <th>stationName</th>
-				 <th>standardPtName</th>
-				 <th>orientPtName</th>
-				 <th>instHeight</th>
-				 <th>tagtHeight</th>
-				 <th>temp</th>
-				 <th>pressure</th>
-				 <th>humidity</th>
-				 <th>seril</th>
-				 <th>morphReport</th>
-				 <th>createDate</th>
+				 <th>站点名称</th>
+				 <th>设站点</th>
+				 <th>定向点</th>
+				 <th>仪器高度</th>
+				 <th>目标高度</th>
+				 <th>温度</th>
+				 <th>气压</th>
+				 <th>湿度</th>
+				 <th>机器序列号</th>
+				 <th>监测报告</th>
+				 <th>创建日期</th>
 			</tr>
 		</thead>
 		<tbody>   

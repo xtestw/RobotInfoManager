@@ -56,7 +56,7 @@
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						首页：
+						个人信息：
 					</li>
 					<li>
 						账号 <span class="divider">/</span>

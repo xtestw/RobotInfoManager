@@ -7,12 +7,16 @@
 <head>
  
         <%@include file="../inc/head.jsp"%>
-          <script type="text/javascript">
+                  <script type="text/javascript">
           $(document).ready(function() {                    
-				$('.datatable').dataTable( {        				
+				$('.datatable').dataTable( { 				
 				"oLanguage": {
-				"sUrl": "/robot/lib/zh_CN.json"
-			} 
+				"sUrl": "/robot/lib/zh_CN.json" 
+				},
+				"sDom": 'T<"clear">lfrtip',
+	        	"oTableTools": {
+	           	 "sSwfPath": "/robot/media/copy_csv_xls_pdf.swf"
+	        	} 
 		});
 } );</script>
 <link href="/robot/css/bootstrap-responsiv.css" rel="stylesheet" type="text/css"/>
@@ -26,21 +30,16 @@
  <div class="content" style="min-height: 1000px">
 		<div class="container-fluid">
 		<div class="row-fluid">
-		<h2>设置</h2>
+		<h2>点组信息</h2>
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						基本功能：
+						信息查询：
 					</li>
 					<li>
-						分页 <span class="divider">/</span>
+						点组信息 <span class="divider">/</span>
 					</li>
-					<li>
-						排序 <span class="divider">/</span>
-					</li>
-					<li>
-						过滤
-					</li>
+					
 				</ul>
 			</div>
 			</div>
@@ -57,14 +56,14 @@
 	private Date createTime; -->
 	
 			<tr>
-				 <th>pointGroupNameString</th>
-				 <th>contianPoint</th>
-				 <th>measurePeriod</th>
-				 <th>measureMode</th>
-				 <th>roundCount</th>
-				 <th>tryCount</th>
-				 <th>remark</th>
-				 <th>createTimeDate</th>
+				 <th>点组名称</th>
+				 <th>包含点</th>
+				 <th>测量时间段</th>
+				 <th>测量模式</th>
+				 <th>测回数</th>
+				 <th>尝试次数</th>
+				 <th>点组说明</th>
+				 <th>点组创建日期</th>
 				 
 			</tr>
 		</thead>

@@ -1,5 +1,6 @@
 package com.robot.action;
 
+import java.lang.ProcessBuilder.Redirect;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -13,6 +14,7 @@ import com.robot.model.PointInfo;
 import com.robot.model.WarningSetting;
 import com.robot.service.inte.IPointInfoService;
 import com.robot.service.inte.ISettingService;
+import com.robot.util.ActionUtil;
 
 @Controller("warningAction")
 @Scope("prototype")
@@ -58,7 +60,12 @@ public class WarningAction extends ActionSupport implements ModelDriven<WarningS
 		 return SUCCESS;
 	}
 
-
+	public String update(){
+		settingService.setFactory(projectname);
+		settingService.update(warningSetting);
+		ActionUtil.setUrl("warning_info.action");
+		return "redirect";
+	}
 	@Override
 	public WarningSetting getModel() {
 		if (warningSetting==null) warningSetting=new WarningSetting();

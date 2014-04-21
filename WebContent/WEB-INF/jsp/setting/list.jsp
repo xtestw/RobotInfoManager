@@ -9,10 +9,14 @@
         <%@include file="../inc/head.jsp"%>
           <script type="text/javascript">
           $(document).ready(function() {                    
-				$('.datatable').dataTable( {        				
+				$('.datatable').dataTable( { 				
 				"oLanguage": {
-				"sUrl": "/robot/lib/zh_CN.json"
-			} 
+				"sUrl": "/robot/lib/zh_CN.json" 
+				},
+				"sDom": 'T<"clear">lfrtip',
+	        	"oTableTools": {
+	           	 "sSwfPath": "/robot/media/copy_csv_xls_pdf.swf"
+	        	} 
 		});
 } );</script>
 <link href="/robot/css/bootstrap-responsiv.css" rel="stylesheet" type="text/css"/>
@@ -26,31 +30,46 @@
  <div class="content" style="min-height: 1000px">
 		<div class="container-fluid">
 		<div class="row-fluid">
-		<h2>设置</h2>
+	<div style="height: 40px;padding-top:20px;"><span style="font-size:30px;font-weight:bold;">设置</span>
+	
+<!-- 	 <a id="modal-774920" href="#modal-container-774920" class="pull-right" data-toggle="modal">导出报表</a></p>
+	       <div id="modal-container-774920" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-header">
+					 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+					<h3 id="myModalLabel">
+						报表格式选择
+					</h3>
+				</div>
+				<div class="modal-body ">
+				<label class="radio"><input type="radio" name="geshi" value="excel">EXCEL</label>	
+				<label class="radio"><input type="radio" name="geshi" value="txt">TXT</label>	
+				 <input type="text" class="span6" placeholder="请输入文件名 默认为output" name="filename">
+				 </div>
+				<div class="modal-footer">
+					 <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button> 
+					 <button class="btn btn-primary" onclick="outdata()">导出</button>
+				</div>
+			</div> -->
+	
+	</div>	
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						基本功能：
+						信息查询：
 					</li>
 					<li>
-						分页 <span class="divider">/</span>
-					</li>
-					<li>
-						排序 <span class="divider">/</span>
-					</li>
-					<li>
-						过滤
+						设置 <span class="divider">/</span>
 					</li>
 				</ul>
 			</div>
 			</div>
 			<div class="row-fluid">
-		<table class="table table-striped table-bordered table-hover datatable">
+		<table id="info" class="table table-striped table-bordered table-hover datatable">
 		<thead>
 			<tr>
 				 <th>ID</th>
-				 <th>Setting</th>
-				 <th>Value</th>
+				 <th>设置参数</th>
+				 <th>值</th>
 			</tr>
 		</thead>
 		<tbody>   

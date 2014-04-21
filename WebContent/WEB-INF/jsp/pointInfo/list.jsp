@@ -7,12 +7,16 @@
 <head>
  
         <%@include file="../inc/head.jsp"%>
-          <script type="text/javascript">
+                 <script type="text/javascript">
           $(document).ready(function() {                    
-				$('.datatable').dataTable( {        				
+				$('.datatable').dataTable( { 				
 				"oLanguage": {
-				"sUrl": "/robot/lib/zh_CN.json"
-			} 
+				"sUrl": "/robot/lib/zh_CN.json" 
+				},
+				"sDom": 'T<"clear">lfrtip',
+	        	"oTableTools": {
+	           	 "sSwfPath": "/robot/media/copy_csv_xls_pdf.swf"
+	        	} 
 		});
 } );</script>
 <link href="/robot/css/bootstrap-responsiv.css" rel="stylesheet" type="text/css"/>
@@ -26,21 +30,16 @@
  <div class="content" style="min-height: 1000px">
 		<div class="container-fluid">
 		<div class="row-fluid">
-		<h2>设置</h2>
+		<h2>点信息</h2>
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						基本功能：
+						信息查询：
 					</li>
 					<li>
-						分页 <span class="divider">/</span>
+						点信息<span class="divider">/</span>
 					</li>
-					<li>
-						排序 <span class="divider">/</span>
-					</li>
-					<li>
-						过滤
-					</li>
+		
 				</ul>
 			</div>
 			</div>
@@ -54,14 +53,14 @@
 	private String remark;
 	private Date createTimeDate; -->
 			<tr>
-				 <th>pointName</th>
-				 <th>PointType</th>
+				 <th>点名</th>
+				 <th>点类型</th>
 				 <th>isSteady</th>
 				 <th>x</th>
 				 <th>y</th>
 				 <th>z</th>
-				 <th>remark</th>
-				 <th>createTimeDate</th>
+				 <th>点说明</th>
+				 <th>创建时间</th>
 				 
 			</tr>
 		</thead>

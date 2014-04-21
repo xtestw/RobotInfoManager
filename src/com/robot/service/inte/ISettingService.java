@@ -18,4 +18,5 @@ public interface ISettingService {
 	public List<Setting> list();
 	public void setDB(String name);
 	public WarningSetting getValues();
+	public void update(WarningSetting warningSetting);
 }

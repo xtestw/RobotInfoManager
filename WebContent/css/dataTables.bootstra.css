@@ -190,3 +190,16 @@ div.DTFC_LeftFootWrapper table {
     border-top: none;
 }
 
+div .DTTT {
+	margin-bottom:10px;
+	position:relative;
+	float:right;
+}
+div .clear{
+	clear:both;
+}
+
+div .dataTables_filter label input{
+	height:26px;
+	border-radius:3px 3px 3px 3px;
+}

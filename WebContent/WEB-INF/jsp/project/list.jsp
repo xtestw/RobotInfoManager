@@ -30,16 +30,10 @@
 			<div>
 				<ul class="breadcrumb">
 					<li>
-						基本功能：
+						项目管理：
 					</li>
 					<li>
-						分页 <span class="divider">/</span>
-					</li>
-					<li>
-						排序 <span class="divider">/</span>
-					</li>
-					<li>
-						过滤
+						选择项目 <span class="divider">/</span>
 					</li>
 				</ul>
 			</div>
