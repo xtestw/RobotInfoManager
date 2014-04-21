@@ -1,6 +1,7 @@
 package com.robot.action;
 
 import java.lang.ProcessBuilder.Redirect;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Resource;
@@ -23,15 +24,29 @@ import com.robot.util.ActionUtil;
 
 @Controller("spWarningAction")
 @Scope("prototype")
-public class SPWarningAction extends ActionSupport implements ModelDriven<ShouLian>  {
+public class SPWarningAction extends ActionSupport {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3211301933344955324L;
 	private String projectname;
 	private ShouLian shouLian;
 	private IShouLianService shouLianService;
 	private List<ShouLian> shouLians;
 	private List<PointGroupInfo> pointGroupInfos;
 	private IPointGroupInfoService pointGroupInfoService;
-	
+	private String PGName;
+
+	@JSON(serialize=false)
+	public String getPGName() {
+		return PGName;
+	}
+
+	public void setPGName(String pGName) {
+		PGName = pGName;
+	}
+
 	@JSON(serialize=false)
 	public IPointGroupInfoService getPointGroupInfoService() {
 		return pointGroupInfoService;
@@ -100,17 +115,14 @@ public class SPWarningAction extends ActionSupport implements ModelDriven<ShouLi
 	public String query()
 	{
 		shouLianService.setFactory(projectname);
-		shouLians=shouLianService.list(shouLian.getPGName());
+		List<ShouLian> lians=shouLianService.list(getPGName());
+		shouLians=new ArrayList<ShouLian>();
+		for(ShouLian i:lians){
+			System.out.println(i.getLeftPointName()+" "+i.getRightPointName());
+			shouLians.add(i);
+		}
 		return ActionUtil.AJAXSUCCESS;
 	}
-	@Override
-	public ShouLian getModel() {
-		// TODO Auto-generated method stub
-		if (shouLian==null)
-		{
-			shouLian=new ShouLian();
-		}
-		return shouLian;
-	}
+
 
 }

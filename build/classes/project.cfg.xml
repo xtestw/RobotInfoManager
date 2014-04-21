@@ -18,6 +18,8 @@
 	    <mapping resource="com/robot/model/SectionInfo.hbm.xml"/>
 	    <mapping resource="com/robot/model/Setting.hbm.xml"/>
 	    <mapping resource="com/robot/model/StationInfo.hbm.xml"/>
+	    <mapping resource="com/robot/model/ShouLian.hbm.xml"/>
+    
     </session-factory>
     
 </hibernate-configuration>

@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="com.robot.model.PointGroupInfo" table="POINTGROUPINFO">
         <id name="pointGroupNameString" type="java.lang.String">
-            <column name="POINTGROUPNAMESTRING" />
+            <column name="POINTGROUPNAME" />
             <generator class="assigned" />
         </id>
         <property name="contianPoint" type="java.lang.String">

@@ -14,28 +14,28 @@
 				"sUrl": "/robot/lib/zh_CN.json"
 			} 
 		});
-} );
+         } );
 
-function query()
+function querycontent()
 {
-	var sld=$("#select_pointgroup  option:selected").text();
+	var sld=$("#select_pointgroup  option:selected").text()+"";
+	var projectname="${sessionScope.curProject.projectName}"+"";
 	 $.ajax({
 			url:'spWarning_query.action',
 			type:'post',
-			data:({PGName:sld+""}),
+			data:({PGName:sld+"",projectname:projectname}),
 			success:function(results)
 			{
-				var obj=$("#info tbody");
-				obj.html("");
-				        $.each(data.comments, function(i, item) {
-				            obj.append(
-				                    "<td class=\"center\">" + item.leftPointName + "</td>" + 
+						$("#info tbody").html("");
+				        $.each(results.shouLians, function(i, item) {
+				        	$("#info tbody").append(
+				                    "<tr><td class=\"center\">" + item.leftPointName + "</td>" + 
 				                    "<td class=\"center\">" + item.rightPointName + "</td>" + 
 				                    "<td class=\"center\">" + item.nop + "</td>" + 
 				                    "<td class=\"center\">" + item.shouLian + "</td>" + 
 				                    "<td class=\"center\">" + item.theSLDiff + "</td>" + 
 				                    "<td class=\"center\">" + item.totalSLDiff + "</td>" + 
-				                    "<td class=\"center\">" + item.measureTime + "</td>" 
+				                    "<td class=\"center\">" + item.measureTime + "</td></tr>" 
 					                  );
 				        });
 			}
@@ -73,7 +73,7 @@ function query()
 				 	<option value="${item.pointGroupNameString }">${item.pointGroupNameString }</option>
 				 </c:forEach>
 				</select>
-      			<a class="btn btn-primary" href="javascript:void(0)" onclick="query()">确定</a>
+      			<a class="btn btn-primary" href="javascript:void(0)" onclick="querycontent()">确定</a>
 			</form>
 			</div>
 			<div class="row-fluid" id="table">
@@ -86,7 +86,7 @@ function query()
 				 <th>水平收敛(m)</th>
 				 <th>水平收敛速率(mm)</th>
 				 <th>水平收敛位移(mm)</th>
-				 <th>测量时间</th>
+				 <th>测量时间(精确到秒)</th>
 			</tr>
 		</thead>
 		<tbody>   

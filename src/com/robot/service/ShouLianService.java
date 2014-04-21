@@ -22,7 +22,6 @@ public class ShouLianService implements IShouLianService {
 	private ShouLianDao shouLianDao;
 	
 	
-	
 	public ShouLianDao getShouLianDao() {
 		return shouLianDao;
 	}
@@ -36,7 +35,7 @@ public class ShouLianService implements IShouLianService {
 	}
 	@Override
 	public List<ShouLian> list(String pgName) {
-		return shouLianDao.list("from ShouLian s where s.pGName="+pgName);
+		return shouLianDao.list("from ShouLian s where s.PGName="+pgName);
 	}
 	
 
