@@ -69,41 +69,46 @@ public class SettingService implements ISettingService {
 	@Override
 	public WarningSetting getValues() {
 	    WarningSetting ret=new WarningSetting();
-		ret.setCZGD((String)settingDao.queryByHql("from Setting s where s.value='CZGD'"));
-		ret.setQJGD((String)settingDao.queryByHql("from Setting s where s.value='QJGD'"));
-		ret.setSL((String)settingDao.queryByHql("from Setting s where s.value='SL'"));
-		ret.setCZGDV((String)settingDao.queryByHql("from Setting s where s.value='CZGDV'"));
-		ret.setQJGDV((String)settingDao.queryByHql("from Setting s where s.value='QJGDV'"));
-		ret.setSLV((String)settingDao.queryByHql("from Setting s where s.value='SLV'"));
-		ret.setQX((String)settingDao.queryByHql("from Setting s where s.value='QX'"));
-		ret.setQXV((String)settingDao.queryByHql("from Setting s where s.value='QXV'"));
-		ret.setCJ((String)settingDao.queryByHql("from Setting s where s.value='CJ'"));
-		ret.setCJV((String)settingDao.queryByHql("from Setting s where s.value='CJV'"));
+		ret.setCZGD((String)settingDao.queryByHql("from Setting s where s.setting='CZGD'"));
+		ret.setQJGD((String)settingDao.queryByHql("from Setting s where s.setting='QJGD'"));
+		ret.setSL((String)settingDao.queryByHql("from Setting s where s.setting='SL'"));
+		ret.setCZGDV((String)settingDao.queryByHql("from Setting s where s.setting='CZGDV'"));
+		ret.setQJGDV((String)settingDao.queryByHql("from Setting s where s.setting='QJGDV'"));
+		ret.setSLV((String)settingDao.queryByHql("from Setting s where s.setting='SLV'"));
+		ret.setQX((String)settingDao.queryByHql("from Setting s where s.setting='QX'"));
+		ret.setQXV((String)settingDao.queryByHql("from Setting s where s.setting='QXV'"));
+		ret.setCJ((String)settingDao.queryByHql("from Setting s where s.setting='CJ'"));
+		ret.setCJV((String)settingDao.queryByHql("from Setting s where s.setting='CJV'"));
 		return ret;
 	}
 	@Override
 	public void update(WarningSetting warningSetting) {
 		// TODO Auto-generated method stub
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getCZGD()+"where s.name='CZGD'");
+				warningSetting.getCZGD()+"where s.setting='CZGD'");
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getQJGD()+"where s.name='QJGD'");
+				warningSetting.getQJGD()+"where s.setting='QJGD'");
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getSL()+"where s.name='SL'");
+				warningSetting.getSL()+"where s.setting='SL'");
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getCZGDV()+"where s.name='CZGDV'");
+				warningSetting.getCZGDV()+"where s.setting='CZGDV'");
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getQJGDV()+"where s.name='QJGDV'");
+				warningSetting.getQJGDV()+"where s.setting='QJGDV'");
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getSLV()+"where s.name='SLV'");
+				warningSetting.getSLV()+"where s.setting='SLV'");
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getQX()+"where s.name='QX'");
+				warningSetting.getQX()+"where s.setting='QX'");
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getCJ()+"where s.name='CJ'");
+				warningSetting.getCJ()+"where s.setting='CJ'");
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getCJV()+"where s.name='CJV'");
+				warningSetting.getCJV()+"where s.setting='CJV'");
 		settingDao.executeByHql("update Setting s set s.value="+
-				warningSetting.getQXV()+"where s.name='QX'");
+				warningSetting.getQXV()+"where s.setting='QX'");
+	}
+	@Override
+	public Setting getParam(String param) {
+		// TODO Auto-generated method stub
+		return (Setting)settingDao.queryByHql("from Setting s where s.setting='"+param+"'");
 	}
 
 

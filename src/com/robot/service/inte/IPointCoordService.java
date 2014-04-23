@@ -20,5 +20,9 @@ public interface IPointCoordService {
 	
 	public List<PointCoord> list(String pointName,String PGName);
 
+	public List<PointCoord> listGD(String pgName,String cp);
+
+	public List<PointCoord> listCJ(String pgName);
+
 
 }	

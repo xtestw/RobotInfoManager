@@ -19,6 +19,7 @@
 	    <mapping resource="com/robot/model/Setting.hbm.xml"/>
 	    <mapping resource="com/robot/model/StationInfo.hbm.xml"/>
 	    <mapping resource="com/robot/model/ShouLian.hbm.xml"/>
+       <mapping resource="com/robot/model/QingXie.hbm.xml"/>
     
     </session-factory>
     

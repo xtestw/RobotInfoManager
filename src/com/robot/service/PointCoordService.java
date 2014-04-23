@@ -16,7 +16,7 @@ import com.robot.service.inte.IPointCoordService;
 public class PointCoordService implements IPointCoordService {
 	
 	private PointCoordDao pointCoordDao;
-	
+
 	
 	public PointCoordDao getPointCoordDao() {
 		return pointCoordDao;
@@ -58,10 +58,18 @@ public class PointCoordService implements IPointCoordService {
 	}
 	@Override
 	public List<PointCoord> list(String pointName,String PGName) {
-		// TODO Auto-generated method stub
 		return pointCoordDao.list("from PointCoord p where p.totalXdiff is not null"
 				+ "and p.totalYDiff is not null and p.totalZDiff is not null and p.pointName = "+pointName+
 				"p.PGName="+PGName);
+	}
+	@Override
+	public List<PointCoord> listGD(String pgName,String cp) {
+		return pointCoordDao.list("from PointCoord p where p.PGName = "+pgName+" and p.pointName like '"+cp+"%'");
+	}
+	@Override
+	public List<PointCoord> listCJ(String pgName) {
+		return pointCoordDao.list("from PointCoord p where p.PGName = "+pgName);
+		
 	}
 
 
