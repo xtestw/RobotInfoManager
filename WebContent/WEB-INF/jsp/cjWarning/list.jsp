@@ -7,6 +7,7 @@
 <head>
  
         <%@include file="../inc/head.jsp"%>
+         <script src="http://code.highcharts.com/highcharts.js"></script>
           <script type="text/javascript">
           $(document).ready(function() {                    
 				$('.datatable').dataTable( {        				
@@ -14,6 +15,102 @@
 				"sUrl": "/robot/lib/zh_CN.json"
 			} 
 		});
+
+				   $('#container').highcharts({                                                             
+	        	        chart: {                                                                             
+	        	            type: 'scatter',                                                                 
+	        	            zoomType: 'xy'                                                                   
+	        	        },                                                                                   
+	        	        title: {                                                                             
+	        	            text: '点位缩略图'                        
+	        	        },                                                                                   
+	        	        subtitle: {                                                                          
+	        	            text: ''                                                      
+	        	        },                                                                                   
+	        	        xAxis: {                                                                             
+	        	            title: {                                                                         
+	        	                enabled: true,                                                               
+	        	                text: 'X (N)'                                                          
+	        	            },                                                                               
+	        	            startOnTick: true,                                                               
+	        	            endOnTick: true,                                                                 
+	        	            showLastLabel: true                                                              
+	        	        },                                                                                   
+	        	        yAxis: {                                                                             
+	        	            title: {                                                                         
+	        	                text: 'Y (E)'                                                          
+	        	            }                                                                                
+	        	        },                                                                                   
+	        	        legend: {                                                                            
+	        	            layout: 'vertical',                                                              
+	        	            align: 'left',                                                                   
+	        	            verticalAlign: 'top',                                                            
+	        	            x: 8,                                                                          
+	        	            y: 100,                                                                           
+	        	            floating: true,                                                                  
+	        	            backgroundColor: '#FFFFFF',                                                      
+	        	            borderWidth: 1                                                                   
+	        	        },                                                                                   
+	        	        plotOptions: {                                                                       
+	        	            scatter: {                                                                       
+	        	                marker: {                                                                    
+	        	                    radius: 5,                                                               
+	        	                    states: {                                                                
+	        	                        hover: {                                                             
+	        	                            enabled: true,                                                   
+	        	                            lineColor: 'rgb(100,100,100)'                                    
+	        	                        }                                                                    
+	        	                    }                                                                        
+	        	                },                                                                           
+	        	                states: {                                                                    
+	        	                    hover: {                                                                 
+	        	                        marker: {                                                            
+	        	                            enabled: false                                                   
+	        	                        }                                                                    
+	        	                    }                                                                        
+	        	                },                                                                           
+	        	                tooltip: {                                                                   
+	        	                    headerFormat: '<b>{series.name}</b><br>',                                
+	        	                    pointFormat: '{point.x} , {point.y} '                                
+	        	                }                                                                            
+	        	            }                                                                                
+	        	        },                                                                                   
+	        	        series: [{                                                                           
+	        	            name: '观测点',                                                                  
+	        	            color: 'rgba(223, 83, 83, .5)',                                                  
+	        	            data: [
+	               	          <%--   <%List<PointInfo> pointInfos=(List<PointInfo>)request.getSession().getAttribute("points");
+	               	            	int flag=0;
+	               	            	for(int i=0;i<pointInfos.size();i++)
+	               	            	{
+	               	            
+	               	            		if (pointInfos.get(i).getPointType().equals("观测点")){
+	               	            		if(flag==1) {				
+	               	            %>
+	               	            	,
+	               	            <%}%>
+	               	            [<%=pointInfos.get(i).getX()%>,<%=pointInfos.get(i).getY()%>]
+	                       	            <%}}%> --%>
+	                  	          ] 
+	        	                                                                                             
+	        	        }, {                                                                                 
+	        	            name: '测量点',                                                                    
+	        	            color: 'rgba(119, 152, 191, .5)',                                                
+	        	            data: [
+	        	            <%--        <% flag=0;
+	              	            	for(int i=0;i<pointInfos.size();i++)
+	              	            	{
+	              	            
+	              	            		if (!pointInfos.get(i).getPointType().equals("观测点")){
+	              	            		if(flag==1) {				
+	              	            %>
+	              	            	,
+	              	            <%}%>
+	              	            [<%=pointInfos.get(i).getX()%>,<%=pointInfos.get(i).getY()%>]
+	                      	            <%}}%> --%>
+	                      	     ]                                                
+	        	        }]                                                                                   
+	        	    });                       
          } );
 
 function querycontent()
@@ -64,6 +161,18 @@ function querycontent()
 				</ul>
 			</div>
 			</div>
+				<div class="tabbable" id="tabs-311861">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a href="#panel-668750" data-toggle="tab">信息查看</a>
+					</li>
+					<li>
+						<a href="#panel-99940" data-toggle="tab">图表展示</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="panel-668750">
+						
 			<div class="row-fluid">
 			<form class="form-inline">
 				<select class="selectpicker"  title="选择点组" id="select_pointgroup">
@@ -93,6 +202,14 @@ function querycontent()
 		</table>
 	
         </div>
+					</div>
+					<div class="tab-pane" id="panel-99940">
+						<div id="container" class="span10">
+						</div>
+	  
+					</div>
+				</div>
+			</div>
   <%@include file="../inc/footer.jsp"%>   
 	</div>
        </div>  

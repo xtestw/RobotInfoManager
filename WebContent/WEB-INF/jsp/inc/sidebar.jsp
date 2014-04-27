@@ -41,13 +41,11 @@
  
         <ul id="premeasure-menu" class="nav nav-list collapse">
             <li ><a href="javascript:void(0)" onclick="go('warning_info.action?projectname=${sessionScope.curProject.projectName}')">预/报警值阅览</a></li>
-            <li ><a href="PointGroupEditor.html">三维位移略图</a></li>
             <li ><a href="javascript:void(0)" onclick="go('spWarning_list.action?projectname=${sessionScope.curProject.projectName}')">水平收敛预警</a></li>
             <li ><a href="javascript:void(0)" onclick="go('gdWarning_list.action?projectname=${sessionScope.curProject.projectName}')">拱顶沉降预警</a></li>
             <li ><a href="javascript:void(0)" onclick="go('qxWarning_list.action?projectname=${sessionScope.curProject.projectName}')">倾斜度预警</a></li>
             <li ><a href="javascript:void(0)" onclick="go('cjWarning_list.action?projectname=${sessionScope.curProject.projectName}')">沉降预警</a></li>
-            <li ><a href="PointGroupEditor.html">预警信息查询</a></li>
-        </ul>
+       </ul>
          </div>
           <div class="accordion-group" style="padding: 0px;margin:0px;">
         <a href="#help-menu" class="nav-header accordion-toggle" data-toggle="collapse" data-parent="#accordion1" ><i class="icon-question-sign"></i>帮助</a>
