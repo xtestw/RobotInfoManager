@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-3-22 14:17:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.robot.model.PointGroupInfo" table="POINTGROUPINFO">
+        <id name="pointGroupName" type="java.lang.String">
+            <column name="POINTGROUPNAME" />
+            <generator class="assigned" />
+        </id>
+        <property name="contianPoint" type="java.lang.String">
+            <column name="CONTIANPOINT" />
+        </property>
+        <property name="measurePeriod" type="java.lang.String">
+            <column name="MEASUREPERIOD" />
+        </property>
+        <property name="measureMode" type="java.lang.String">
+            <column name="MEASUREMODE" />
+        </property>
+        <property name="roundCount" type="java.lang.Integer">
+            <column name="ROUNDCOUNT" />
+        </property>
+        <property name="tryCount" type="java.lang.Integer">
+            <column name="TRYCOUNT" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" />
+        </property>
+        <property name="createTime" type="java.util.Date">
+            <column name="CREATETIME" />
+        </property>
+    </class>
+</hibernate-mapping>

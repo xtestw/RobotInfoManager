@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-4-23 12:12:42 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.robot.model.QingXie" table="QINGXIE">
+        <id name="QXID" type="java.lang.Integer">
+            <column name="QXID" />
+            <generator class="assigned" />
+        </id>
+        <property name="topPointName" type="java.lang.String">
+            <column name="TOPPOINTNAME" />
+        </property>
+        <property name="botPointName" type="java.lang.String">
+            <column name="BOTPOINTNAME" />
+        </property>
+        <property name="PGName" type="java.lang.String">
+            <column name="PGNAME" />
+        </property>
+        <property name="nop" type="java.lang.Integer">
+            <column name="NOP" />
+        </property>
+        <property name="qingXie" type="java.lang.Float">
+            <column name="QINGXIE" />
+        </property>
+        <property name="theQXDiff" type="java.lang.Float">
+            <column name="THEQXDIFF" />
+        </property>
+        <property name="totalQXDiff" type="java.lang.Float">
+            <column name="TOTALQXDIFF" />
+        </property>
+        <property name="measureTime" type="java.util.Date">
+            <column name="MEASURETIME" />
+        </property>
+    </class>
+</hibernate-mapping>

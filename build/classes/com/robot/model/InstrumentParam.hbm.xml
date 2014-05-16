@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014-3-22 14:17:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.robot.model.InstrumentParam" table="INSTRUMENTPARAM">
+        <id name="srial" type="java.lang.String">
+            <column name="SRIAL" />
+            <generator class="assigned" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="port" type="java.lang.String">
+            <column name="PORT" />
+        </property>
+        <property name="dataFormat" type="java.lang.String">
+            <column name="DATAFORMAT" />
+        </property>
+        <property name="baud" type="java.lang.Integer">
+            <column name="BAUD" />
+        </property>
+        <property name="timeOutSet" type="java.lang.Integer">
+            <column name="TIMEOUTSET" />
+        </property>
+    </class>
+</hibernate-mapping>
