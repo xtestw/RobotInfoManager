@@ -74,9 +74,7 @@ public class PointGroupInfoService implements IPointGroupInfoService {
 		System.out.println(pgName);
 		PointGroupInfo p=pointGroupInfoDao.list("From PointGroupInfo p where p.pointGroupName = '"+pgName+"'").get(0);
 		p=(PointGroupInfo)pointGroupInfoDao.queryByHql("From PointGroupInfo p where p.pointGroupName = ?",pgName);
-		System.out.println(p.getPointGroupName());
 		String str[]=p.getContianPoint().split(";");
-		System.out.println(str.length+p.getContianPoint());
 		List<PointName> ret=new ArrayList<PointName>();
 		for (String s:str){
 			PointName pn=new PointName();

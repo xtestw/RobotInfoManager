@@ -49,6 +49,13 @@ public class BaseDao<T> extends HibernateDaoSupport implements IBaseDao<T> {
 	public T load(int id) {
 		return this.getHibernateTemplate().load(getClz(), id);
 	}
+	
+	@Override
+	public List<T> list(String hql, Object[] args) {
+		Query q = setParamterQuery(hql, args);
+		return q.list();
+	}
+
 	private Query setParamterQuery(String hql,Object[] args) {
 		Query q = this.getSession().createQuery(hql);
 		if(args!=null) {
@@ -60,11 +67,6 @@ public class BaseDao<T> extends HibernateDaoSupport implements IBaseDao<T> {
 		return q;
 	}
 
-	@Override
-	public List<T> list(String hql, Object[] args) {
-		Query q = setParamterQuery(hql, args);
-		return q.list();
-	}
 
 	@Override
 	public List<T> list(String hql) {

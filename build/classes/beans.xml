@@ -27,13 +27,6 @@
   			 value="classpath:user.cfg.xml">
   		</property>
  	</bean>	
- 
-	<!-- <bean id="sessionFactory2"  class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
-  		<property name="configLocation"
-  			 value="classpath:project.cfg.xml">
-  		</property>
- 	</bean>	 -->
-
  	<!--事务管理器-->
 	<bean id="txManager"
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">

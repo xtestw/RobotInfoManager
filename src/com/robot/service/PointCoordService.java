@@ -100,7 +100,6 @@ public class PointCoordService implements IPointCoordService {
 	public List<PointInfo> listGDWarningPoint(List<PointCoord> pointCoords,
 			Setting gd, Setting gdv) {
 
-		System.out.println("listGDend"+pointCoords.size());
 		List<PointInfo> ret=new ArrayList<PointInfo>();
 		for(PointCoord p:pointCoords){
 			  if (p.getTheZDiff()>Float.parseFloat(gdv.getValue()) || p.getTotalZDiff()>Float.parseFloat(gd.getValue()) )
@@ -114,11 +113,7 @@ public class PointCoordService implements IPointCoordService {
 	public List<PointCoord> getPointXYZ(String pgName, String pointName) {
 		return  pointCoordDao.list("from PointCoord p where p.totalXdiff is not null"
 				+ " and p.totalYDiff is not null and p.totalZDiff is not null and p.pointName = ? and p.PGName=?",new Object[]{pointName,pgName});
-//	return  pointCoordDao.list("from PointCoord");
-	
-		/*+pointName+
-				"' and p.PGName= '"+pgName+"'");
-	*/}
+	}
 
 
 }
